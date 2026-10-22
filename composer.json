@@ -1,0 +1,30 @@
+{
+    "name": "shaplayer/bigstocks",
+    "description": "The bigstocks backend",
+    "type": "project",
+    "require": {
+        "php-di/php-di": "dev-master",
+        "vlucas/phpdotenv": "^5.7",
+        "symfony/console": "8.2.x-dev",
+        "symfony/filesystem": "8.2.x-dev",
+        "symfony/finder": "8.2.x-dev",
+        "basis-company/nats": "^1.2",
+        "symfony/http-client": "^8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "BigStocks\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Shinobi PHP"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+	"bin-dir": "./bin",
+	"vendor-dir": "./lib"
+    }
+}

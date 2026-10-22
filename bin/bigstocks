@@ -1,0 +1,21 @@
+#!/usr/bin/env php
+<?php
+declare(strict_types=1);
+define('BIGSTOCKS_ROOT', dirname(dirname(__FILE__)));
+
+use Symfony\Component\Console\Application;
+use \Dotenv\Dotenv;
+
+require dirname(__DIR__) . '/lib/autoload.php';
+
+$dotenv = Dotenv::createImmutable(BIGSTOCKS_ROOT);
+$dotenv->safeLoad();
+
+$application = new Application('BigStocks', '0.1.0');
+
+$application->addCommand(new \BigStocks\Commands\MarketData\Ingest());
+$application->addCommand(new \BigStocks\Commands\MarketData\ProvidersCommand());
+$application->addCommand(new \BigStocks\Commands\MarketData\ProfileCommand());
+$application->addCommand(new \BigStocks\Commands\MarketData\SnapshotCommand());
+
+$application->run();

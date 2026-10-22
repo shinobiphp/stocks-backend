@@ -1,0 +1,8 @@
+.env
+lib
+lib/
+lib/*
+var/cache/*
+var/data/*
+var/tmp/*
+var/work/*
